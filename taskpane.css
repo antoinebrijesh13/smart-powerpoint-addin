@@ -1,0 +1,356 @@
+/* PowerPoint Add-in Task Pane Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #667eea;
+    --primary-dark: #5568d3;
+    --accent: #764ba2;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    
+    --text: #1e293b;
+    --text-light: #64748b;
+    --text-muted: #94a3b8;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    padding: 20px 16px;
+    max-width: 100%;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+}
+
+.header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.tagline {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Cards */
+.status-card,
+.slide-info-card,
+.share-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+.label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+/* Status Indicator */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: var(--bg);
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.status-dot.online {
+    background: var(--success);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+}
+
+.status-dot.offline {
+    background: var(--text-muted);
+    animation: none;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+}
+
+#statusText {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* Session Info */
+.session-info {
+    margin-bottom: 12px;
+}
+
+.session-info code {
+    display: block;
+    padding: 8px 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Student Count */
+.student-count-card {
+    margin-top: 12px;
+}
+
+.count-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    border-radius: 10px;
+}
+
+.count-icon {
+    font-size: 24px;
+}
+
+.count-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--white);
+}
+
+/* Slide Info */
+.slide-number {
+    text-align: center;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-radius: 8px;
+}
+
+.slide-number span:first-child {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.slide-total {
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Share Link */
+.link-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.student-link {
+    flex: 1;
+    padding: 10px 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: var(--text);
+    word-break: break-all;
+}
+
+.copy-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+/* Notifications Section */
+.notifications-section {
+    margin-top: 20px;
+}
+
+.notifications-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.no-notifications {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.notification-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-sm);
+    border-left: 3px solid var(--primary);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.notification-card.critical {
+    border-left-color: var(--error);
+}
+
+.notification-card.medium {
+    border-left-color: var(--warning);
+}
+
+.notification-card.low {
+    border-left-color: var(--success);
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.notification-count {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.notification-time {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.notification-summary {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.notification-suggestion {
+    font-size: 12px;
+    color: var(--text-light);
+    font-style: italic;
+    padding: 8px 10px;
+    background: var(--bg);
+    border-radius: 6px;
+}
+
+/* Settings Button */
+.settings-btn-container {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.settings-btn {
+    padding: 10px 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.settings-btn:hover {
+    background: var(--bg);
+    border-color: var(--primary);
+}
+
+/* Scrollbar */
+.notifications-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notifications-list::-webkit-scrollbar-track {
+    background: var(--bg);
+    border-radius: 10px;
+}
+
+.notifications-list::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+}
+
+.notifications-list::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}

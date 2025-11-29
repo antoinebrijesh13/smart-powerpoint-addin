@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart PowerPoint</title>
+    <link rel="stylesheet" href="taskpane.css">
+    
+    <!-- Office.js -->
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📊 Smart PowerPoint</h1>
+            <p class="tagline">Real-time Student Feedback</p>
+        </div>
+
+        <!-- Connection Status -->
+        <div class="status-card">
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot offline"></span>
+                <span id="statusText">Connecting...</span>
+            </div>
+            <div class="session-info">
+                <p class="label">Session ID</p>
+                <code id="sessionId">demo_session</code>
+            </div>
+            <div class="student-count-card">
+                <p class="label">Connected Students</p>
+                <div class="count-display">
+                    <span class="count-icon">👥</span>
+                    <span class="count-number" id="studentCount">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Slide Info -->
+        <div class="slide-info-card">
+            <p class="label">Current Slide</p>
+            <div class="slide-number">
+                <span id="currentSlide">1</span>
+                <span class="slide-total">/ <span id="totalSlides">--</span></span>
+            </div>
+        </div>
+
+        <!-- Student Link -->
+        <div class="share-card">
+            <p class="label">Student Join Link</p>
+            <div class="link-container">
+                <code class="student-link" id="studentLink">localhost:8080/student.html?session=demo_session</code>
+                <button class="copy-btn" id="copyBtn" title="Copy link">
+                    📋
+                </button>
+            </div>
+        </div>
+
+        <!-- Notifications Container -->
+        <div class="notifications-section">
+            <p class="label">Recent Alerts</p>
+            <div id="notificationsContainer" class="notifications-list">
+                <p class="no-notifications">No questions yet. Waiting for students...</p>
+            </div>
+        </div>
+
+        <!-- Settings (Future) -->
+        <div class="settings-btn-container">
+            <button class="settings-btn" title="Settings">⚙️ Settings</button>
+        </div>
+    </div>
+
+    <script src="taskpane.js"></script>
+</body>
+</html>
